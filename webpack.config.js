@@ -5,12 +5,12 @@ module.exports = {
   target: "node",
   // Generate sourcemaps for proper error messages
   devtool: "source-map",
-  // Since 'aws-sdk' is not compatible with webpack,
-  externals: [{ 'aws-sdk': 'aws-sdk' }],
+  // Since "aws-sdk" is not compatible with webpack,
+  externals: [ "aws-sdk" ],
   mode: slsw.lib.webpack.isLocal ? "development" : "production",
   optimization: {
     // We do not want to minimize our code.
-    minimize: false
+    minimize: true
   },
   performance: {
     // Turn off size warnings for entry points
