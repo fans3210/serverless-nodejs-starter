@@ -1,7 +1,6 @@
 import AWS from "aws-sdk";
 
-var s3 = new AWS.S3({apiVersion: '2006-03-01', region: 'us-west-2'});
-console.log(s3);
+const s3 = new AWS.S3({apiVersion: '2006-03-01', region: 'us-west-2'});
 
 export const hello = async (event, context) => {
   return {

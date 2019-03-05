@@ -1,8 +1,13 @@
 {
-  "plugins": ["source-map-support", "transform-runtime"],
+  "plugins": ["source-map-support"],
   "presets": [
-    ["env", { "node": "8.10" }],
-    "stage-3"
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "8.10"
+        }
+      }
+    ]
   ]
 }
-
