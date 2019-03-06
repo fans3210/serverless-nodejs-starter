@@ -18,7 +18,7 @@ module.exports = {
           new TerserPlugin({
             sourceMap: ENABLE_SOURCE_MAPS,
             terserOptions: {
-              mangle: ENABLE_SOURCE_MAPS ? false : true
+              mangle: ! ENABLE_SOURCE_MAPS
             }
           })
         ]
