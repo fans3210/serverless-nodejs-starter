@@ -1,5 +1,6 @@
 const slsw = require("serverless-webpack");
 const TerserPlugin = require('terser-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const ENABLE_MINIFY = true;
 const ENABLE_SOURCE_MAPS = true;
@@ -28,7 +29,7 @@ module.exports = {
   // Since "aws-sdk" is not compatible with webpack,
   externals: [ "aws-sdk" ],
   mode: slsw.lib.webpack.isLocal ? "development" : "production",
-  optimization: optimization,
+  optimization: { minimizer: [new UglifyJsPlugin()] },
   performance: {
     // Turn off size warnings for entry points
     hints: false
