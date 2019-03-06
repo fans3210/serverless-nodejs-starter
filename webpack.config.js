@@ -4,7 +4,7 @@ module.exports = {
   entry: slsw.lib.entries,
   target: "node",
   // Generate sourcemaps for proper error messages
-  devtool: "source-map",
+  devtool: "cheap-module-source-map",
   // Since "aws-sdk" is not compatible with webpack,
   externals: [ "aws-sdk" ],
   mode: slsw.lib.webpack.isLocal ? "development" : "production",
