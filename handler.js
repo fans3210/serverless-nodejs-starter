@@ -2,9 +2,9 @@ import AWS from "aws-sdk";
 
 const s3 = new AWS.S3({apiVersion: '2006-03-01', region: 'us-west-2'});
 
-console.log(a.b.c);
-
 export const hello = async (event, context) => {
+
+console.log(a.b.c);
   return {
     statusCode: 200,
     body: JSON.stringify({
