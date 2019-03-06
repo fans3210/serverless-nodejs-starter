@@ -1,10 +1,7 @@
 import AWS from "aws-sdk";
 
-const s3 = new AWS.S3({apiVersion: '2006-03-01', region: 'us-west-2'});
-
 export const hello = async (event, context) => {
-
-console.log(a.b.c);
+  AWS.config.update({region:'us-east-1'});
   return {
     statusCode: 200,
     body: JSON.stringify({
