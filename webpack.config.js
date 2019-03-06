@@ -10,7 +10,7 @@ module.exports = {
   mode: slsw.lib.webpack.isLocal ? "development" : "production",
   optimization: {
     // We do not want to minimize our code.
-    minimize: false
+    minimize: true
   },
   performance: {
     // Turn off size warnings for entry points
