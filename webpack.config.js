@@ -1,7 +1,7 @@
 const slsw = require("serverless-webpack");
 const TerserPlugin = require('terser-webpack-plugin');
 
-const ENABLE_SOURCE_MAPS = false;
+const ENABLE_SOURCE_MAPS = true;
 
 module.exports = {
   entry: slsw.lib.entries,
