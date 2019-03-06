@@ -1,16 +1,21 @@
 const slsw = require("serverless-webpack");
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   entry: slsw.lib.entries,
   target: "node",
   // Generate sourcemaps for proper error messages
-  devtool: "cheap-module-source-map",
+  devtool: "source-map",
   // Since "aws-sdk" is not compatible with webpack,
   externals: [ "aws-sdk" ],
   mode: slsw.lib.webpack.isLocal ? "development" : "production",
   optimization: {
     // We do not want to minimize our code.
-    minimize: false
+    minimizer: [
+      new TerserPlugin({
+        sourceMap: true,
+      }),
+    ],
   },
   performance: {
     // Turn off size warnings for entry points
