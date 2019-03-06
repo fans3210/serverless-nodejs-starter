@@ -1,7 +1,7 @@
 const slsw = require("serverless-webpack");
 const TerserPlugin = require('terser-webpack-plugin');
 
-const ENABLE_MINIFY = false;
+const ENABLE_MINIFY = true;
 const ENABLE_SOURCE_MAPS = true;
 
 const optimization = ENABLE_MINIFY
@@ -9,6 +9,10 @@ const optimization = ENABLE_MINIFY
     minimizer: [
       new TerserPlugin({
         sourceMap: ENABLE_SOURCE_MAPS,
+        terserOptions: {
+          keep_classnames: true,
+          keep_fnames: true,
+        }
       })
     ]
   }
