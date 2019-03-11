@@ -1,7 +1,7 @@
-import AWS from "aws-sdk";
+//import AWS from "aws-sdk";
 
 export const hello = async (event, context) => {
-  AWS.config.update({ region: "us-east-1" });
+  //AWS.config.update({ region: "us-east-1" });
   return {
     statusCode: 200,
     body: JSON.stringify({

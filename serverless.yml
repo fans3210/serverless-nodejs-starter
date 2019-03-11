@@ -6,8 +6,8 @@ plugins:
   - serverless-bundle
   - serverless-offline
 
-package:
-  individually: true
+#package:
+#  individually: true
 
 provider:
   name: aws
